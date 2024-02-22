@@ -2,10 +2,11 @@ import React from "react";
 import Dark from "../images/dark.png";
 import Light from "../images/light.png";
 
-import themeStore from "../zustand/themeStore";
+import Store from "../zustand/store";
 
 const Theme = () => {
-  const { dark, toggleDarkMode } = themeStore();
+  const { themeState: { dark }, toggleDarkMode} = Store()
+
   return (
     <div style={{ cursor: "pointer", padding: "15px" }}>
       {dark ? (
